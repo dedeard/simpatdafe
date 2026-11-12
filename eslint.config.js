@@ -1,49 +1,18 @@
-//  @ts-check
-
-import { tanstackConfig } from '@tanstack/eslint-config'
-import prettierConfig from 'eslint-config-prettier/flat'
+import js from '@eslint/js'
+import prettierConfig from 'eslint-config-prettier'
 import reactHooks from 'eslint-plugin-react-hooks'
+import { defineConfig, globalIgnores } from 'eslint/config'
 import globals from 'globals'
+import tseslint from 'typescript-eslint'
 
-export default [
-  {
-    ignores: [
-      'dist',
-      '.output',
-      '.nitro',
-      '.tanstack',
-      '.vinxi',
-      '.agents',
-      'node_modules',
-      'src/routeTree.gen.ts',
-      'eslint.config.js',
-      'prettier.config.js',
-    ],
-  },
-  ...tanstackConfig,
+export default defineConfig([
+  globalIgnores(['dist', '.output', '.nitro', '.tanstack', '.vinxi', '.agents', 'src/routeTree.gen.ts']),
   {
     files: ['**/*.{ts,tsx}'],
+    extends: [js.configs.recommended, tseslint.configs.recommended, reactHooks.configs.flat.recommended, prettierConfig],
     languageOptions: {
-      globals: { ...globals.browser, ...globals.node },
-    },
-    plugins: {
-      'react-hooks': reactHooks,
-    },
-    rules: {
-      ...reactHooks.configs.recommended.rules,
+      ecmaVersion: 2020,
+      globals: globals.browser,
     },
   },
-  {
-    rules: {
-      'import/no-cycle': 'off',
-      'import/order': 'off',
-      'import/consistent-type-specifier-style': 'off',
-      'sort-imports': 'off',
-      '@typescript-eslint/array-type': 'off',
-      '@typescript-eslint/require-await': 'off',
-      'pnpm/json-enforce-catalog': 'off',
-    },
-  },
-  // Must be last: turns off rules that conflict with Prettier
-  prettierConfig,
-]
+])
