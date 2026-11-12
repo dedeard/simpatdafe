@@ -1,3 +1,4 @@
+import { FormAlert } from '@/components/form-alert'
 import { Button } from '@/components/ui/button'
 import { Field, FieldDescription, FieldError, FieldGroup, FieldLabel, FieldSeparator } from '@/components/ui/field'
 import { Input } from '@/components/ui/input'
@@ -6,7 +7,7 @@ import { cn } from '@/lib/utils'
 import { useNavigate } from '@tanstack/react-router'
 import { Loader2Icon } from 'lucide-react'
 import { useActionState, useTransition } from 'react'
-import { AuthHeader, AuthSwitchLink, FormAlert, GitHubButton } from '../../-components'
+import { AuthHeader, AuthSwitchLink, GitHubButton } from '../../-components'
 
 const MIN_PASSWORD_LENGTH = 8
 
@@ -50,7 +51,7 @@ export function RegisterForm({ className, ...props }: Omit<React.ComponentProps<
   const handleGitHub = () =>
     startGitHubTransition(async () => {
       const result = await loginWithGitHub()
-      if (result.ok) await navigate({ to: '/app/dashboard' })
+      if (result.ok) await navigate({ to: '/dashboard' })
     })
 
   const busy = isPending || isGitHubPending

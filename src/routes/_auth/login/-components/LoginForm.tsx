@@ -1,3 +1,4 @@
+import { FormAlert } from '@/components/form-alert'
 import { Button } from '@/components/ui/button'
 import { Field, FieldDescription, FieldGroup, FieldLabel, FieldSeparator } from '@/components/ui/field'
 import { Input } from '@/components/ui/input'
@@ -6,7 +7,7 @@ import { cn } from '@/lib/utils'
 import { Link, useNavigate } from '@tanstack/react-router'
 import { Loader2Icon } from 'lucide-react'
 import { useActionState, useTransition } from 'react'
-import { AuthHeader, AuthSwitchLink, FormAlert, GitHubButton } from '../../-components'
+import { AuthHeader, AuthSwitchLink, GitHubButton } from '../../-components'
 
 type LoginState = { error?: string; email: string }
 
@@ -18,7 +19,7 @@ export function LoginForm({ className, ...props }: Omit<React.ComponentProps<'fo
       const email = String(formData.get('email') ?? '')
       const result = await login({ email, password: String(formData.get('password') ?? '') })
       if (!result.ok) return { error: result.error, email }
-      await navigate({ to: '/app/dashboard' })
+      await navigate({ to: '/dashboard' })
       return { email }
     },
     { email: '' },
@@ -27,7 +28,7 @@ export function LoginForm({ className, ...props }: Omit<React.ComponentProps<'fo
   const handleGitHub = () =>
     startGitHubTransition(async () => {
       const result = await loginWithGitHub()
-      if (result.ok) await navigate({ to: '/app/dashboard' })
+      if (result.ok) await navigate({ to: '/dashboard' })
     })
 
   const busy = isPending || isGitHubPending

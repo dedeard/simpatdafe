@@ -19,3 +19,11 @@ To use the components in your app, import them as follows:
 ```tsx
 import { Button } from '@/components/ui/button'
 ```
+
+## Deploy
+
+The app deploys to Vercel through the Nitro Vite plugin (`nitro()` in `vite.config.ts`). The Vercel project is
+connected to this GitHub repository, so every push to `master` deploys to production and every other branch gets a
+preview deployment. Vercel detects TanStack Start and runs `pnpm build`; no `vercel.json` is needed.
+
+The dummy backend keeps data in memory, so on Vercel it resets whenever a function instance starts.

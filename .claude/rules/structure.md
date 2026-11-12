@@ -21,7 +21,7 @@ src/
 │   │   ├── register/       # /register
 │   │   └── forgot-password/ # /forgot-password
 │   │
-│   └── app/
+│   └── _app/               # Pathless layout: pages live at /dashboard, /projects, ... (no /app prefix)
 │       ├── route.tsx       # Authenticated app layout (sidebar + <Outlet />)
 │       ├── -components/    # Shared components for ALL app pages
 │       ├── -hooks/         # Shared hooks for ALL app pages
@@ -87,8 +87,8 @@ so the router ignores it:
 | Constants  | `-constants.ts` |
 | Tests      | `-__tests__/`   |
 
-Wrong: `src/routes/app/projects/components/ProjectCard.tsx` (becomes the route `/app/projects/components/ProjectCard`).
-Right: `src/routes/app/projects/-components/ProjectCard.tsx`.
+Wrong: `src/routes/_app/projects/components/ProjectCard.tsx` (becomes the route `/projects/components/ProjectCard`).
+Right: `src/routes/_app/projects/-components/ProjectCard.tsx`.
 
 ## Isolation Rules
 
@@ -103,7 +103,7 @@ Parent layer/        → Shared by sibling pages only
   ↑
 Section layer/       → Shared across section (e.g., all settings pages)
   ↑
-App layer/           → Shared across entire app (src/routes/app/)
+App layer/           → Shared across entire app (src/routes/_app/)
   ↑
 src/{layer}/         → Global (used everywhere)
 ```
@@ -123,14 +123,14 @@ src/{layer}/         → Global (used everywhere)
 | `members/` + `profile/`                | `settings/-components/` |
 | All settings pages                     | `settings/-components/` |
 | `projects/index.tsx` + `$projectId/`   | `projects/-components/` |
-| `settings/` + `projects/` + `reports/` | `app/-components/`      |
+| `settings/` + `projects/` + `reports/` | `_app/-components/`     |
 | Entire app (including auth)            | `src/components/`       |
 
 Replace `-components/` with `-hooks/`, `-contexts/`, or `-types/` as appropriate.
 
 ### Global Directories
 
-- `src/lib/` — API client, resources and utilities. Always global.
+- `src/lib/` — API client, dummy backend, resources and utilities (`dates.ts`, `tax.ts`, `slug.ts`, `utils.ts`). Always global.
 - `src/hooks/` — Data hooks wrapping API resources, plus app-wide utility hooks. One file per domain: `use-{domain}.ts`.
 - `src/contexts/` — Auth and Theme contexts only.
 - `src/components/` — UI primitives and app-wide components only.
@@ -141,7 +141,7 @@ Replace `-components/` with `-hooks/`, `-contexts/`, or `-types/` as appropriate
 ### Route Module Structure
 
 ```
-src/routes/app/{module}/
+src/routes/_app/{module}/
 ├── route.tsx          # Layout with <Outlet /> (only if the module has child pages)
 ├── index.tsx          # Main page (exports `Route` from createFileRoute)
 ├── -components/       # Module-scoped components
@@ -167,6 +167,29 @@ src/routes/app/{module}/
 - Location: `src/lib/api/resources/{domain}.ts`
 - One file per domain. Contains types, API call functions, and constants for that domain.
 - Barrel export via `src/lib/api/resources/index.ts`
+- Resource files import only `call` from `src/lib/api/rpc.ts`; pages never call server functions directly.
+
+### Dummy API (until the real backend exists)
+
+All data is served by an in-memory dummy backend that runs on the server only:
+
+- `src/lib/api/rpc.ts` — one `createServerFn` that dispatches `call('module.operation', args)` to a handler. Handler names and
+  types are checked through `Handlers`, so a wrong name fails `pnpm typecheck`.
+- `src/lib/api/dummy/handlers/{module}.ts` — one file per module, flat `'module.operation': async (args) => …` objects, merged in
+  `handlers/index.ts`. Validation errors use `assert()` from `dummy/lookup.ts` and surface as form errors.
+- `src/lib/api/dummy/seed/` — deterministic seed (`createRng(20261112)`), demo "today" is `2026-11-12` (`src/lib/dates.ts`).
+  Generate in dependency order; payments are collected as intents and numbered by date in `finalizePayments`.
+- `src/lib/api/dummy/db.ts` — the `Db` type and `getDb()`, kept on `globalThis` so it survives hot reload. Data resets when the dev
+  server restarts.
+- `src/lib/tax.ts` and `src/lib/dates.ts` — pure calculations shared by the client (live form previews) and the handlers.
+  The server always recomputes; never trust a client total.
+- Handlers may `import type` from `resources/` but must not import values that import `rpc.ts`.
+- To swap in the real backend, replace handler bodies only; resource files and pages stay as they are.
+
+### Document IDs in URLs
+
+Document numbers contain `/` (for example `SPTPD/2026/11/004160`). Use `toSlug()` / `fromSlug()` from `src/lib/slug.ts` for route
+params. `NOP` and `wp-0001` style IDs are already URL-safe.
 
 ### Global Hooks
 
@@ -182,7 +205,7 @@ src/routes/app/{module}/
 ### Dynamic Routes
 
 - Use `$` prefix for dynamic segments: `$projectId/`, `$slug/`
-- Nested under the parent module: `src/routes/app/projects/$projectId/`
+- Nested under the parent module: `src/routes/_app/projects/$projectId/`
 - Read params with `Route.useParams()`
 
 ### Generated Files

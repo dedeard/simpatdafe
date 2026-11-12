@@ -10,31 +10,153 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AppRouteRouteImport } from './routes/_app/route'
 import { Route as AuthRouteRouteImport } from './routes/_auth/route'
-import { Route as AppRouteRouteImport } from './routes/app/route'
-import { Route as AppIndexRouteImport } from './routes/app/index'
+import { Route as AppLaporanRouteRouteImport } from './routes/_app/laporan/route'
+import { Route as AppPengaturanRouteRouteImport } from './routes/_app/pengaturan/route'
+import { Route as AppRetribusiRouteRouteImport } from './routes/_app/retribusi/route'
+import { Route as AppBphtbIndexRouteImport } from './routes/_app/bphtb/index'
+import { Route as AppDashboardIndexRouteImport } from './routes/_app/dashboard/index'
+import { Route as AppLaporanIndexRouteImport } from './routes/_app/laporan/index'
+import { Route as AppPbbIndexRouteImport } from './routes/_app/pbb/index'
+import { Route as AppPembayaranIndexRouteImport } from './routes/_app/pembayaran/index'
+import { Route as AppPenagihanIndexRouteImport } from './routes/_app/penagihan/index'
+import { Route as AppPenetapanIndexRouteImport } from './routes/_app/penetapan/index'
+import { Route as AppPengaturanIndexRouteImport } from './routes/_app/pengaturan/index'
+import { Route as AppSptpdIndexRouteImport } from './routes/_app/sptpd/index'
+import { Route as AppWajibPajakIndexRouteImport } from './routes/_app/wajib-pajak/index'
+import { Route as AppWajibPajakIdRouteRouteImport } from './routes/_app/wajib-pajak/$id/route'
 import { Route as AuthForgotPasswordIndexRouteImport } from './routes/_auth/forgot-password/index'
 import { Route as AuthLoginIndexRouteImport } from './routes/_auth/login/index'
 import { Route as AuthRegisterIndexRouteImport } from './routes/_auth/register/index'
-import { Route as AppDashboardIndexRouteImport } from './routes/app/dashboard/index'
+import { Route as AppBphtbIdIndexRouteImport } from './routes/_app/bphtb/$id/index'
+import { Route as AppBphtbCreateIndexRouteImport } from './routes/_app/bphtb/create/index'
+import { Route as AppLaporanHarianIndexRouteImport } from './routes/_app/laporan/harian/index'
+import { Route as AppLaporanPerWpIndexRouteImport } from './routes/_app/laporan/per-wp/index'
+import { Route as AppLaporanPiutangIndexRouteImport } from './routes/_app/laporan/piutang/index'
+import { Route as AppLaporanRealisasiIndexRouteImport } from './routes/_app/laporan/realisasi/index'
+import { Route as AppPbbNopIndexRouteImport } from './routes/_app/pbb/$nop/index'
+import { Route as AppPbbSpptIndexRouteImport } from './routes/_app/pbb/sppt/index'
+import { Route as AppPembayaranIdIndexRouteImport } from './routes/_app/pembayaran/$id/index'
+import { Route as AppPembayaranCreateIndexRouteImport } from './routes/_app/pembayaran/create/index'
+import { Route as AppPembayaranRekonsiliasiIndexRouteImport } from './routes/_app/pembayaran/rekonsiliasi/index'
+import { Route as AppPenagihanStpdIndexRouteImport } from './routes/_app/penagihan/stpd/index'
+import { Route as AppPenetapanIdIndexRouteImport } from './routes/_app/penetapan/$id/index'
+import { Route as AppPenetapanCreateIndexRouteImport } from './routes/_app/penetapan/create/index'
+import { Route as AppPengaturanPenandatanganIndexRouteImport } from './routes/_app/pengaturan/penandatangan/index'
+import { Route as AppPengaturanPenggunaIndexRouteImport } from './routes/_app/pengaturan/pengguna/index'
+import { Route as AppPengaturanPeranIndexRouteImport } from './routes/_app/pengaturan/peran/index'
+import { Route as AppPengaturanTampilanIndexRouteImport } from './routes/_app/pengaturan/tampilan/index'
+import { Route as AppPengaturanTargetIndexRouteImport } from './routes/_app/pengaturan/target/index'
+import { Route as AppPengaturanTarifIndexRouteImport } from './routes/_app/pengaturan/tarif/index'
+import { Route as AppPengaturanWilayahIndexRouteImport } from './routes/_app/pengaturan/wilayah/index'
+import { Route as AppRetribusiKepelabuhananIndexRouteImport } from './routes/_app/retribusi/kepelabuhanan/index'
+import { Route as AppRetribusiSkrdIndexRouteImport } from './routes/_app/retribusi/skrd/index'
+import { Route as AppRetribusiTandaMasukIndexRouteImport } from './routes/_app/retribusi/tanda-masuk/index'
+import { Route as AppSptpdIdIndexRouteImport } from './routes/_app/sptpd/$id/index'
+import { Route as AppSptpdCreateIndexRouteImport } from './routes/_app/sptpd/create/index'
+import { Route as AppWajibPajakIdIndexRouteImport } from './routes/_app/wajib-pajak/$id/index'
+import { Route as AppWajibPajakCreateIndexRouteImport } from './routes/_app/wajib-pajak/create/index'
+import { Route as AppPbbObjekCreateIndexRouteImport } from './routes/_app/pbb/objek/create/index'
+import { Route as AppPbbSpptTerbitIndexRouteImport } from './routes/_app/pbb/sppt/terbit/index'
+import { Route as AppPenagihanStpdIdIndexRouteImport } from './routes/_app/penagihan/stpd/$id/index'
+import { Route as AppPenagihanStpdCreateIndexRouteImport } from './routes/_app/penagihan/stpd/create/index'
+import { Route as AppPengaturanPeranRoleIdIndexRouteImport } from './routes/_app/pengaturan/peran/$roleId/index'
+import { Route as AppPengaturanPeranCreateIndexRouteImport } from './routes/_app/pengaturan/peran/create/index'
+import { Route as AppRetribusiKepelabuhananIdIndexRouteImport } from './routes/_app/retribusi/kepelabuhanan/$id/index'
+import { Route as AppRetribusiKepelabuhananCreateIndexRouteImport } from './routes/_app/retribusi/kepelabuhanan/create/index'
+import { Route as AppRetribusiKepelabuhananKapalIndexRouteImport } from './routes/_app/retribusi/kepelabuhanan/kapal/index'
+import { Route as AppRetribusiSkrdIdIndexRouteImport } from './routes/_app/retribusi/skrd/$id/index'
+import { Route as AppRetribusiSkrdCreateIndexRouteImport } from './routes/_app/retribusi/skrd/create/index'
+import { Route as AppRetribusiTandaMasukIdIndexRouteImport } from './routes/_app/retribusi/tanda-masuk/$id/index'
+import { Route as AppRetribusiTandaMasukCreateIndexRouteImport } from './routes/_app/retribusi/tanda-masuk/create/index'
+import { Route as AppRetribusiTandaMasukRekonsiliasiIndexRouteImport } from './routes/_app/retribusi/tanda-masuk/rekonsiliasi/index'
+import { Route as AppWajibPajakIdEditIndexRouteImport } from './routes/_app/wajib-pajak/$id/edit/index'
+import { Route as AppWajibPajakIdKartuIndexRouteImport } from './routes/_app/wajib-pajak/$id/kartu/index'
+import { Route as AppWajibPajakIdObjekIndexRouteImport } from './routes/_app/wajib-pajak/$id/objek/index'
+import { Route as AppWajibPajakIdRiwayatIndexRouteImport } from './routes/_app/wajib-pajak/$id/riwayat/index'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AppRouteRoute = AppRouteRouteImport.update({
+  id: '/_app',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AuthRouteRoute = AuthRouteRouteImport.update({
   id: '/_auth',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AppRouteRoute = AppRouteRouteImport.update({
-  id: '/app',
-  path: '/app',
-  getParentRoute: () => rootRouteImport,
+const AppLaporanRouteRoute = AppLaporanRouteRouteImport.update({
+  id: '/laporan',
+  path: '/laporan',
+  getParentRoute: () => AppRouteRoute,
 } as any)
-const AppIndexRoute = AppIndexRouteImport.update({
+const AppPengaturanRouteRoute = AppPengaturanRouteRouteImport.update({
+  id: '/pengaturan',
+  path: '/pengaturan',
+  getParentRoute: () => AppRouteRoute,
+} as any)
+const AppRetribusiRouteRoute = AppRetribusiRouteRouteImport.update({
+  id: '/retribusi',
+  path: '/retribusi',
+  getParentRoute: () => AppRouteRoute,
+} as any)
+const AppBphtbIndexRoute = AppBphtbIndexRouteImport.update({
+  id: '/bphtb/',
+  path: '/bphtb/',
+  getParentRoute: () => AppRouteRoute,
+} as any)
+const AppDashboardIndexRoute = AppDashboardIndexRouteImport.update({
+  id: '/dashboard/',
+  path: '/dashboard/',
+  getParentRoute: () => AppRouteRoute,
+} as any)
+const AppLaporanIndexRoute = AppLaporanIndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => AppLaporanRouteRoute,
+} as any)
+const AppPbbIndexRoute = AppPbbIndexRouteImport.update({
+  id: '/pbb/',
+  path: '/pbb/',
+  getParentRoute: () => AppRouteRoute,
+} as any)
+const AppPembayaranIndexRoute = AppPembayaranIndexRouteImport.update({
+  id: '/pembayaran/',
+  path: '/pembayaran/',
+  getParentRoute: () => AppRouteRoute,
+} as any)
+const AppPenagihanIndexRoute = AppPenagihanIndexRouteImport.update({
+  id: '/penagihan/',
+  path: '/penagihan/',
+  getParentRoute: () => AppRouteRoute,
+} as any)
+const AppPenetapanIndexRoute = AppPenetapanIndexRouteImport.update({
+  id: '/penetapan/',
+  path: '/penetapan/',
+  getParentRoute: () => AppRouteRoute,
+} as any)
+const AppPengaturanIndexRoute = AppPengaturanIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AppPengaturanRouteRoute,
+} as any)
+const AppSptpdIndexRoute = AppSptpdIndexRouteImport.update({
+  id: '/sptpd/',
+  path: '/sptpd/',
+  getParentRoute: () => AppRouteRoute,
+} as any)
+const AppWajibPajakIndexRoute = AppWajibPajakIndexRouteImport.update({
+  id: '/wajib-pajak/',
+  path: '/wajib-pajak/',
+  getParentRoute: () => AppRouteRoute,
+} as any)
+const AppWajibPajakIdRouteRoute = AppWajibPajakIdRouteRouteImport.update({
+  id: '/wajib-pajak/$id',
+  path: '/wajib-pajak/$id',
   getParentRoute: () => AppRouteRoute,
 } as any)
 const AuthForgotPasswordIndexRoute = AuthForgotPasswordIndexRouteImport.update({
@@ -52,74 +174,664 @@ const AuthRegisterIndexRoute = AuthRegisterIndexRouteImport.update({
   path: '/register/',
   getParentRoute: () => AuthRouteRoute,
 } as any)
-const AppDashboardIndexRoute = AppDashboardIndexRouteImport.update({
-  id: '/dashboard/',
-  path: '/dashboard/',
+const AppBphtbIdIndexRoute = AppBphtbIdIndexRouteImport.update({
+  id: '/bphtb/$id/',
+  path: '/bphtb/$id/',
   getParentRoute: () => AppRouteRoute,
 } as any)
+const AppBphtbCreateIndexRoute = AppBphtbCreateIndexRouteImport.update({
+  id: '/bphtb/create/',
+  path: '/bphtb/create/',
+  getParentRoute: () => AppRouteRoute,
+} as any)
+const AppLaporanHarianIndexRoute = AppLaporanHarianIndexRouteImport.update({
+  id: '/harian/',
+  path: '/harian/',
+  getParentRoute: () => AppLaporanRouteRoute,
+} as any)
+const AppLaporanPerWpIndexRoute = AppLaporanPerWpIndexRouteImport.update({
+  id: '/per-wp/',
+  path: '/per-wp/',
+  getParentRoute: () => AppLaporanRouteRoute,
+} as any)
+const AppLaporanPiutangIndexRoute = AppLaporanPiutangIndexRouteImport.update({
+  id: '/piutang/',
+  path: '/piutang/',
+  getParentRoute: () => AppLaporanRouteRoute,
+} as any)
+const AppLaporanRealisasiIndexRoute =
+  AppLaporanRealisasiIndexRouteImport.update({
+    id: '/realisasi/',
+    path: '/realisasi/',
+    getParentRoute: () => AppLaporanRouteRoute,
+  } as any)
+const AppPbbNopIndexRoute = AppPbbNopIndexRouteImport.update({
+  id: '/pbb/$nop/',
+  path: '/pbb/$nop/',
+  getParentRoute: () => AppRouteRoute,
+} as any)
+const AppPbbSpptIndexRoute = AppPbbSpptIndexRouteImport.update({
+  id: '/pbb/sppt/',
+  path: '/pbb/sppt/',
+  getParentRoute: () => AppRouteRoute,
+} as any)
+const AppPembayaranIdIndexRoute = AppPembayaranIdIndexRouteImport.update({
+  id: '/pembayaran/$id/',
+  path: '/pembayaran/$id/',
+  getParentRoute: () => AppRouteRoute,
+} as any)
+const AppPembayaranCreateIndexRoute =
+  AppPembayaranCreateIndexRouteImport.update({
+    id: '/pembayaran/create/',
+    path: '/pembayaran/create/',
+    getParentRoute: () => AppRouteRoute,
+  } as any)
+const AppPembayaranRekonsiliasiIndexRoute =
+  AppPembayaranRekonsiliasiIndexRouteImport.update({
+    id: '/pembayaran/rekonsiliasi/',
+    path: '/pembayaran/rekonsiliasi/',
+    getParentRoute: () => AppRouteRoute,
+  } as any)
+const AppPenagihanStpdIndexRoute = AppPenagihanStpdIndexRouteImport.update({
+  id: '/penagihan/stpd/',
+  path: '/penagihan/stpd/',
+  getParentRoute: () => AppRouteRoute,
+} as any)
+const AppPenetapanIdIndexRoute = AppPenetapanIdIndexRouteImport.update({
+  id: '/penetapan/$id/',
+  path: '/penetapan/$id/',
+  getParentRoute: () => AppRouteRoute,
+} as any)
+const AppPenetapanCreateIndexRoute = AppPenetapanCreateIndexRouteImport.update({
+  id: '/penetapan/create/',
+  path: '/penetapan/create/',
+  getParentRoute: () => AppRouteRoute,
+} as any)
+const AppPengaturanPenandatanganIndexRoute =
+  AppPengaturanPenandatanganIndexRouteImport.update({
+    id: '/penandatangan/',
+    path: '/penandatangan/',
+    getParentRoute: () => AppPengaturanRouteRoute,
+  } as any)
+const AppPengaturanPenggunaIndexRoute =
+  AppPengaturanPenggunaIndexRouteImport.update({
+    id: '/pengguna/',
+    path: '/pengguna/',
+    getParentRoute: () => AppPengaturanRouteRoute,
+  } as any)
+const AppPengaturanPeranIndexRoute = AppPengaturanPeranIndexRouteImport.update({
+  id: '/peran/',
+  path: '/peran/',
+  getParentRoute: () => AppPengaturanRouteRoute,
+} as any)
+const AppPengaturanTampilanIndexRoute =
+  AppPengaturanTampilanIndexRouteImport.update({
+    id: '/tampilan/',
+    path: '/tampilan/',
+    getParentRoute: () => AppPengaturanRouteRoute,
+  } as any)
+const AppPengaturanTargetIndexRoute =
+  AppPengaturanTargetIndexRouteImport.update({
+    id: '/target/',
+    path: '/target/',
+    getParentRoute: () => AppPengaturanRouteRoute,
+  } as any)
+const AppPengaturanTarifIndexRoute = AppPengaturanTarifIndexRouteImport.update({
+  id: '/tarif/',
+  path: '/tarif/',
+  getParentRoute: () => AppPengaturanRouteRoute,
+} as any)
+const AppPengaturanWilayahIndexRoute =
+  AppPengaturanWilayahIndexRouteImport.update({
+    id: '/wilayah/',
+    path: '/wilayah/',
+    getParentRoute: () => AppPengaturanRouteRoute,
+  } as any)
+const AppRetribusiKepelabuhananIndexRoute =
+  AppRetribusiKepelabuhananIndexRouteImport.update({
+    id: '/kepelabuhanan/',
+    path: '/kepelabuhanan/',
+    getParentRoute: () => AppRetribusiRouteRoute,
+  } as any)
+const AppRetribusiSkrdIndexRoute = AppRetribusiSkrdIndexRouteImport.update({
+  id: '/skrd/',
+  path: '/skrd/',
+  getParentRoute: () => AppRetribusiRouteRoute,
+} as any)
+const AppRetribusiTandaMasukIndexRoute =
+  AppRetribusiTandaMasukIndexRouteImport.update({
+    id: '/tanda-masuk/',
+    path: '/tanda-masuk/',
+    getParentRoute: () => AppRetribusiRouteRoute,
+  } as any)
+const AppSptpdIdIndexRoute = AppSptpdIdIndexRouteImport.update({
+  id: '/sptpd/$id/',
+  path: '/sptpd/$id/',
+  getParentRoute: () => AppRouteRoute,
+} as any)
+const AppSptpdCreateIndexRoute = AppSptpdCreateIndexRouteImport.update({
+  id: '/sptpd/create/',
+  path: '/sptpd/create/',
+  getParentRoute: () => AppRouteRoute,
+} as any)
+const AppWajibPajakIdIndexRoute = AppWajibPajakIdIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AppWajibPajakIdRouteRoute,
+} as any)
+const AppWajibPajakCreateIndexRoute =
+  AppWajibPajakCreateIndexRouteImport.update({
+    id: '/wajib-pajak/create/',
+    path: '/wajib-pajak/create/',
+    getParentRoute: () => AppRouteRoute,
+  } as any)
+const AppPbbObjekCreateIndexRoute = AppPbbObjekCreateIndexRouteImport.update({
+  id: '/pbb/objek/create/',
+  path: '/pbb/objek/create/',
+  getParentRoute: () => AppRouteRoute,
+} as any)
+const AppPbbSpptTerbitIndexRoute = AppPbbSpptTerbitIndexRouteImport.update({
+  id: '/pbb/sppt/terbit/',
+  path: '/pbb/sppt/terbit/',
+  getParentRoute: () => AppRouteRoute,
+} as any)
+const AppPenagihanStpdIdIndexRoute = AppPenagihanStpdIdIndexRouteImport.update({
+  id: '/penagihan/stpd/$id/',
+  path: '/penagihan/stpd/$id/',
+  getParentRoute: () => AppRouteRoute,
+} as any)
+const AppPenagihanStpdCreateIndexRoute =
+  AppPenagihanStpdCreateIndexRouteImport.update({
+    id: '/penagihan/stpd/create/',
+    path: '/penagihan/stpd/create/',
+    getParentRoute: () => AppRouteRoute,
+  } as any)
+const AppPengaturanPeranRoleIdIndexRoute =
+  AppPengaturanPeranRoleIdIndexRouteImport.update({
+    id: '/peran/$roleId/',
+    path: '/peran/$roleId/',
+    getParentRoute: () => AppPengaturanRouteRoute,
+  } as any)
+const AppPengaturanPeranCreateIndexRoute =
+  AppPengaturanPeranCreateIndexRouteImport.update({
+    id: '/peran/create/',
+    path: '/peran/create/',
+    getParentRoute: () => AppPengaturanRouteRoute,
+  } as any)
+const AppRetribusiKepelabuhananIdIndexRoute =
+  AppRetribusiKepelabuhananIdIndexRouteImport.update({
+    id: '/kepelabuhanan/$id/',
+    path: '/kepelabuhanan/$id/',
+    getParentRoute: () => AppRetribusiRouteRoute,
+  } as any)
+const AppRetribusiKepelabuhananCreateIndexRoute =
+  AppRetribusiKepelabuhananCreateIndexRouteImport.update({
+    id: '/kepelabuhanan/create/',
+    path: '/kepelabuhanan/create/',
+    getParentRoute: () => AppRetribusiRouteRoute,
+  } as any)
+const AppRetribusiKepelabuhananKapalIndexRoute =
+  AppRetribusiKepelabuhananKapalIndexRouteImport.update({
+    id: '/kepelabuhanan/kapal/',
+    path: '/kepelabuhanan/kapal/',
+    getParentRoute: () => AppRetribusiRouteRoute,
+  } as any)
+const AppRetribusiSkrdIdIndexRoute = AppRetribusiSkrdIdIndexRouteImport.update({
+  id: '/skrd/$id/',
+  path: '/skrd/$id/',
+  getParentRoute: () => AppRetribusiRouteRoute,
+} as any)
+const AppRetribusiSkrdCreateIndexRoute =
+  AppRetribusiSkrdCreateIndexRouteImport.update({
+    id: '/skrd/create/',
+    path: '/skrd/create/',
+    getParentRoute: () => AppRetribusiRouteRoute,
+  } as any)
+const AppRetribusiTandaMasukIdIndexRoute =
+  AppRetribusiTandaMasukIdIndexRouteImport.update({
+    id: '/tanda-masuk/$id/',
+    path: '/tanda-masuk/$id/',
+    getParentRoute: () => AppRetribusiRouteRoute,
+  } as any)
+const AppRetribusiTandaMasukCreateIndexRoute =
+  AppRetribusiTandaMasukCreateIndexRouteImport.update({
+    id: '/tanda-masuk/create/',
+    path: '/tanda-masuk/create/',
+    getParentRoute: () => AppRetribusiRouteRoute,
+  } as any)
+const AppRetribusiTandaMasukRekonsiliasiIndexRoute =
+  AppRetribusiTandaMasukRekonsiliasiIndexRouteImport.update({
+    id: '/tanda-masuk/rekonsiliasi/',
+    path: '/tanda-masuk/rekonsiliasi/',
+    getParentRoute: () => AppRetribusiRouteRoute,
+  } as any)
+const AppWajibPajakIdEditIndexRoute =
+  AppWajibPajakIdEditIndexRouteImport.update({
+    id: '/edit/',
+    path: '/edit/',
+    getParentRoute: () => AppWajibPajakIdRouteRoute,
+  } as any)
+const AppWajibPajakIdKartuIndexRoute =
+  AppWajibPajakIdKartuIndexRouteImport.update({
+    id: '/kartu/',
+    path: '/kartu/',
+    getParentRoute: () => AppWajibPajakIdRouteRoute,
+  } as any)
+const AppWajibPajakIdObjekIndexRoute =
+  AppWajibPajakIdObjekIndexRouteImport.update({
+    id: '/objek/',
+    path: '/objek/',
+    getParentRoute: () => AppWajibPajakIdRouteRoute,
+  } as any)
+const AppWajibPajakIdRiwayatIndexRoute =
+  AppWajibPajakIdRiwayatIndexRouteImport.update({
+    id: '/riwayat/',
+    path: '/riwayat/',
+    getParentRoute: () => AppWajibPajakIdRouteRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/app': typeof AppRouteRouteWithChildren
-  '/app/': typeof AppIndexRoute
+  '/laporan': typeof AppLaporanRouteRouteWithChildren
+  '/pengaturan': typeof AppPengaturanRouteRouteWithChildren
+  '/retribusi': typeof AppRetribusiRouteRouteWithChildren
+  '/wajib-pajak/$id': typeof AppWajibPajakIdRouteRouteWithChildren
+  '/bphtb/': typeof AppBphtbIndexRoute
+  '/dashboard/': typeof AppDashboardIndexRoute
+  '/laporan/': typeof AppLaporanIndexRoute
+  '/pbb/': typeof AppPbbIndexRoute
+  '/pembayaran/': typeof AppPembayaranIndexRoute
+  '/penagihan/': typeof AppPenagihanIndexRoute
+  '/penetapan/': typeof AppPenetapanIndexRoute
+  '/pengaturan/': typeof AppPengaturanIndexRoute
+  '/sptpd/': typeof AppSptpdIndexRoute
+  '/wajib-pajak/': typeof AppWajibPajakIndexRoute
   '/forgot-password/': typeof AuthForgotPasswordIndexRoute
   '/login/': typeof AuthLoginIndexRoute
   '/register/': typeof AuthRegisterIndexRoute
-  '/app/dashboard/': typeof AppDashboardIndexRoute
+  '/bphtb/$id/': typeof AppBphtbIdIndexRoute
+  '/bphtb/create/': typeof AppBphtbCreateIndexRoute
+  '/laporan/harian/': typeof AppLaporanHarianIndexRoute
+  '/laporan/per-wp/': typeof AppLaporanPerWpIndexRoute
+  '/laporan/piutang/': typeof AppLaporanPiutangIndexRoute
+  '/laporan/realisasi/': typeof AppLaporanRealisasiIndexRoute
+  '/pbb/$nop/': typeof AppPbbNopIndexRoute
+  '/pbb/sppt/': typeof AppPbbSpptIndexRoute
+  '/pembayaran/$id/': typeof AppPembayaranIdIndexRoute
+  '/pembayaran/create/': typeof AppPembayaranCreateIndexRoute
+  '/pembayaran/rekonsiliasi/': typeof AppPembayaranRekonsiliasiIndexRoute
+  '/penagihan/stpd/': typeof AppPenagihanStpdIndexRoute
+  '/penetapan/$id/': typeof AppPenetapanIdIndexRoute
+  '/penetapan/create/': typeof AppPenetapanCreateIndexRoute
+  '/pengaturan/penandatangan/': typeof AppPengaturanPenandatanganIndexRoute
+  '/pengaturan/pengguna/': typeof AppPengaturanPenggunaIndexRoute
+  '/pengaturan/peran/': typeof AppPengaturanPeranIndexRoute
+  '/pengaturan/tampilan/': typeof AppPengaturanTampilanIndexRoute
+  '/pengaturan/target/': typeof AppPengaturanTargetIndexRoute
+  '/pengaturan/tarif/': typeof AppPengaturanTarifIndexRoute
+  '/pengaturan/wilayah/': typeof AppPengaturanWilayahIndexRoute
+  '/retribusi/kepelabuhanan/': typeof AppRetribusiKepelabuhananIndexRoute
+  '/retribusi/skrd/': typeof AppRetribusiSkrdIndexRoute
+  '/retribusi/tanda-masuk/': typeof AppRetribusiTandaMasukIndexRoute
+  '/sptpd/$id/': typeof AppSptpdIdIndexRoute
+  '/sptpd/create/': typeof AppSptpdCreateIndexRoute
+  '/wajib-pajak/$id/': typeof AppWajibPajakIdIndexRoute
+  '/wajib-pajak/create/': typeof AppWajibPajakCreateIndexRoute
+  '/pbb/objek/create/': typeof AppPbbObjekCreateIndexRoute
+  '/pbb/sppt/terbit/': typeof AppPbbSpptTerbitIndexRoute
+  '/penagihan/stpd/$id/': typeof AppPenagihanStpdIdIndexRoute
+  '/penagihan/stpd/create/': typeof AppPenagihanStpdCreateIndexRoute
+  '/pengaturan/peran/$roleId/': typeof AppPengaturanPeranRoleIdIndexRoute
+  '/pengaturan/peran/create/': typeof AppPengaturanPeranCreateIndexRoute
+  '/retribusi/kepelabuhanan/$id/': typeof AppRetribusiKepelabuhananIdIndexRoute
+  '/retribusi/kepelabuhanan/create/': typeof AppRetribusiKepelabuhananCreateIndexRoute
+  '/retribusi/kepelabuhanan/kapal/': typeof AppRetribusiKepelabuhananKapalIndexRoute
+  '/retribusi/skrd/$id/': typeof AppRetribusiSkrdIdIndexRoute
+  '/retribusi/skrd/create/': typeof AppRetribusiSkrdCreateIndexRoute
+  '/retribusi/tanda-masuk/$id/': typeof AppRetribusiTandaMasukIdIndexRoute
+  '/retribusi/tanda-masuk/create/': typeof AppRetribusiTandaMasukCreateIndexRoute
+  '/retribusi/tanda-masuk/rekonsiliasi/': typeof AppRetribusiTandaMasukRekonsiliasiIndexRoute
+  '/wajib-pajak/$id/edit/': typeof AppWajibPajakIdEditIndexRoute
+  '/wajib-pajak/$id/kartu/': typeof AppWajibPajakIdKartuIndexRoute
+  '/wajib-pajak/$id/objek/': typeof AppWajibPajakIdObjekIndexRoute
+  '/wajib-pajak/$id/riwayat/': typeof AppWajibPajakIdRiwayatIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/app': typeof AppIndexRoute
+  '/retribusi': typeof AppRetribusiRouteRouteWithChildren
+  '/bphtb': typeof AppBphtbIndexRoute
+  '/dashboard': typeof AppDashboardIndexRoute
+  '/laporan': typeof AppLaporanIndexRoute
+  '/pbb': typeof AppPbbIndexRoute
+  '/pembayaran': typeof AppPembayaranIndexRoute
+  '/penagihan': typeof AppPenagihanIndexRoute
+  '/penetapan': typeof AppPenetapanIndexRoute
+  '/pengaturan': typeof AppPengaturanIndexRoute
+  '/sptpd': typeof AppSptpdIndexRoute
+  '/wajib-pajak': typeof AppWajibPajakIndexRoute
   '/forgot-password': typeof AuthForgotPasswordIndexRoute
   '/login': typeof AuthLoginIndexRoute
   '/register': typeof AuthRegisterIndexRoute
-  '/app/dashboard': typeof AppDashboardIndexRoute
+  '/bphtb/$id': typeof AppBphtbIdIndexRoute
+  '/bphtb/create': typeof AppBphtbCreateIndexRoute
+  '/laporan/harian': typeof AppLaporanHarianIndexRoute
+  '/laporan/per-wp': typeof AppLaporanPerWpIndexRoute
+  '/laporan/piutang': typeof AppLaporanPiutangIndexRoute
+  '/laporan/realisasi': typeof AppLaporanRealisasiIndexRoute
+  '/pbb/$nop': typeof AppPbbNopIndexRoute
+  '/pbb/sppt': typeof AppPbbSpptIndexRoute
+  '/pembayaran/$id': typeof AppPembayaranIdIndexRoute
+  '/pembayaran/create': typeof AppPembayaranCreateIndexRoute
+  '/pembayaran/rekonsiliasi': typeof AppPembayaranRekonsiliasiIndexRoute
+  '/penagihan/stpd': typeof AppPenagihanStpdIndexRoute
+  '/penetapan/$id': typeof AppPenetapanIdIndexRoute
+  '/penetapan/create': typeof AppPenetapanCreateIndexRoute
+  '/pengaturan/penandatangan': typeof AppPengaturanPenandatanganIndexRoute
+  '/pengaturan/pengguna': typeof AppPengaturanPenggunaIndexRoute
+  '/pengaturan/peran': typeof AppPengaturanPeranIndexRoute
+  '/pengaturan/tampilan': typeof AppPengaturanTampilanIndexRoute
+  '/pengaturan/target': typeof AppPengaturanTargetIndexRoute
+  '/pengaturan/tarif': typeof AppPengaturanTarifIndexRoute
+  '/pengaturan/wilayah': typeof AppPengaturanWilayahIndexRoute
+  '/retribusi/kepelabuhanan': typeof AppRetribusiKepelabuhananIndexRoute
+  '/retribusi/skrd': typeof AppRetribusiSkrdIndexRoute
+  '/retribusi/tanda-masuk': typeof AppRetribusiTandaMasukIndexRoute
+  '/sptpd/$id': typeof AppSptpdIdIndexRoute
+  '/sptpd/create': typeof AppSptpdCreateIndexRoute
+  '/wajib-pajak/$id': typeof AppWajibPajakIdIndexRoute
+  '/wajib-pajak/create': typeof AppWajibPajakCreateIndexRoute
+  '/pbb/objek/create': typeof AppPbbObjekCreateIndexRoute
+  '/pbb/sppt/terbit': typeof AppPbbSpptTerbitIndexRoute
+  '/penagihan/stpd/$id': typeof AppPenagihanStpdIdIndexRoute
+  '/penagihan/stpd/create': typeof AppPenagihanStpdCreateIndexRoute
+  '/pengaturan/peran/$roleId': typeof AppPengaturanPeranRoleIdIndexRoute
+  '/pengaturan/peran/create': typeof AppPengaturanPeranCreateIndexRoute
+  '/retribusi/kepelabuhanan/$id': typeof AppRetribusiKepelabuhananIdIndexRoute
+  '/retribusi/kepelabuhanan/create': typeof AppRetribusiKepelabuhananCreateIndexRoute
+  '/retribusi/kepelabuhanan/kapal': typeof AppRetribusiKepelabuhananKapalIndexRoute
+  '/retribusi/skrd/$id': typeof AppRetribusiSkrdIdIndexRoute
+  '/retribusi/skrd/create': typeof AppRetribusiSkrdCreateIndexRoute
+  '/retribusi/tanda-masuk/$id': typeof AppRetribusiTandaMasukIdIndexRoute
+  '/retribusi/tanda-masuk/create': typeof AppRetribusiTandaMasukCreateIndexRoute
+  '/retribusi/tanda-masuk/rekonsiliasi': typeof AppRetribusiTandaMasukRekonsiliasiIndexRoute
+  '/wajib-pajak/$id/edit': typeof AppWajibPajakIdEditIndexRoute
+  '/wajib-pajak/$id/kartu': typeof AppWajibPajakIdKartuIndexRoute
+  '/wajib-pajak/$id/objek': typeof AppWajibPajakIdObjekIndexRoute
+  '/wajib-pajak/$id/riwayat': typeof AppWajibPajakIdRiwayatIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/_app': typeof AppRouteRouteWithChildren
   '/_auth': typeof AuthRouteRouteWithChildren
-  '/app': typeof AppRouteRouteWithChildren
-  '/app/': typeof AppIndexRoute
+  '/_app/laporan': typeof AppLaporanRouteRouteWithChildren
+  '/_app/pengaturan': typeof AppPengaturanRouteRouteWithChildren
+  '/_app/retribusi': typeof AppRetribusiRouteRouteWithChildren
+  '/_app/wajib-pajak/$id': typeof AppWajibPajakIdRouteRouteWithChildren
+  '/_app/bphtb/': typeof AppBphtbIndexRoute
+  '/_app/dashboard/': typeof AppDashboardIndexRoute
+  '/_app/laporan/': typeof AppLaporanIndexRoute
+  '/_app/pbb/': typeof AppPbbIndexRoute
+  '/_app/pembayaran/': typeof AppPembayaranIndexRoute
+  '/_app/penagihan/': typeof AppPenagihanIndexRoute
+  '/_app/penetapan/': typeof AppPenetapanIndexRoute
+  '/_app/pengaturan/': typeof AppPengaturanIndexRoute
+  '/_app/sptpd/': typeof AppSptpdIndexRoute
+  '/_app/wajib-pajak/': typeof AppWajibPajakIndexRoute
   '/_auth/forgot-password/': typeof AuthForgotPasswordIndexRoute
   '/_auth/login/': typeof AuthLoginIndexRoute
   '/_auth/register/': typeof AuthRegisterIndexRoute
-  '/app/dashboard/': typeof AppDashboardIndexRoute
+  '/_app/bphtb/$id/': typeof AppBphtbIdIndexRoute
+  '/_app/bphtb/create/': typeof AppBphtbCreateIndexRoute
+  '/_app/laporan/harian/': typeof AppLaporanHarianIndexRoute
+  '/_app/laporan/per-wp/': typeof AppLaporanPerWpIndexRoute
+  '/_app/laporan/piutang/': typeof AppLaporanPiutangIndexRoute
+  '/_app/laporan/realisasi/': typeof AppLaporanRealisasiIndexRoute
+  '/_app/pbb/$nop/': typeof AppPbbNopIndexRoute
+  '/_app/pbb/sppt/': typeof AppPbbSpptIndexRoute
+  '/_app/pembayaran/$id/': typeof AppPembayaranIdIndexRoute
+  '/_app/pembayaran/create/': typeof AppPembayaranCreateIndexRoute
+  '/_app/pembayaran/rekonsiliasi/': typeof AppPembayaranRekonsiliasiIndexRoute
+  '/_app/penagihan/stpd/': typeof AppPenagihanStpdIndexRoute
+  '/_app/penetapan/$id/': typeof AppPenetapanIdIndexRoute
+  '/_app/penetapan/create/': typeof AppPenetapanCreateIndexRoute
+  '/_app/pengaturan/penandatangan/': typeof AppPengaturanPenandatanganIndexRoute
+  '/_app/pengaturan/pengguna/': typeof AppPengaturanPenggunaIndexRoute
+  '/_app/pengaturan/peran/': typeof AppPengaturanPeranIndexRoute
+  '/_app/pengaturan/tampilan/': typeof AppPengaturanTampilanIndexRoute
+  '/_app/pengaturan/target/': typeof AppPengaturanTargetIndexRoute
+  '/_app/pengaturan/tarif/': typeof AppPengaturanTarifIndexRoute
+  '/_app/pengaturan/wilayah/': typeof AppPengaturanWilayahIndexRoute
+  '/_app/retribusi/kepelabuhanan/': typeof AppRetribusiKepelabuhananIndexRoute
+  '/_app/retribusi/skrd/': typeof AppRetribusiSkrdIndexRoute
+  '/_app/retribusi/tanda-masuk/': typeof AppRetribusiTandaMasukIndexRoute
+  '/_app/sptpd/$id/': typeof AppSptpdIdIndexRoute
+  '/_app/sptpd/create/': typeof AppSptpdCreateIndexRoute
+  '/_app/wajib-pajak/$id/': typeof AppWajibPajakIdIndexRoute
+  '/_app/wajib-pajak/create/': typeof AppWajibPajakCreateIndexRoute
+  '/_app/pbb/objek/create/': typeof AppPbbObjekCreateIndexRoute
+  '/_app/pbb/sppt/terbit/': typeof AppPbbSpptTerbitIndexRoute
+  '/_app/penagihan/stpd/$id/': typeof AppPenagihanStpdIdIndexRoute
+  '/_app/penagihan/stpd/create/': typeof AppPenagihanStpdCreateIndexRoute
+  '/_app/pengaturan/peran/$roleId/': typeof AppPengaturanPeranRoleIdIndexRoute
+  '/_app/pengaturan/peran/create/': typeof AppPengaturanPeranCreateIndexRoute
+  '/_app/retribusi/kepelabuhanan/$id/': typeof AppRetribusiKepelabuhananIdIndexRoute
+  '/_app/retribusi/kepelabuhanan/create/': typeof AppRetribusiKepelabuhananCreateIndexRoute
+  '/_app/retribusi/kepelabuhanan/kapal/': typeof AppRetribusiKepelabuhananKapalIndexRoute
+  '/_app/retribusi/skrd/$id/': typeof AppRetribusiSkrdIdIndexRoute
+  '/_app/retribusi/skrd/create/': typeof AppRetribusiSkrdCreateIndexRoute
+  '/_app/retribusi/tanda-masuk/$id/': typeof AppRetribusiTandaMasukIdIndexRoute
+  '/_app/retribusi/tanda-masuk/create/': typeof AppRetribusiTandaMasukCreateIndexRoute
+  '/_app/retribusi/tanda-masuk/rekonsiliasi/': typeof AppRetribusiTandaMasukRekonsiliasiIndexRoute
+  '/_app/wajib-pajak/$id/edit/': typeof AppWajibPajakIdEditIndexRoute
+  '/_app/wajib-pajak/$id/kartu/': typeof AppWajibPajakIdKartuIndexRoute
+  '/_app/wajib-pajak/$id/objek/': typeof AppWajibPajakIdObjekIndexRoute
+  '/_app/wajib-pajak/$id/riwayat/': typeof AppWajibPajakIdRiwayatIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/app'
-    | '/app/'
+    | '/laporan'
+    | '/pengaturan'
+    | '/retribusi'
+    | '/wajib-pajak/$id'
+    | '/bphtb/'
+    | '/dashboard/'
+    | '/laporan/'
+    | '/pbb/'
+    | '/pembayaran/'
+    | '/penagihan/'
+    | '/penetapan/'
+    | '/pengaturan/'
+    | '/sptpd/'
+    | '/wajib-pajak/'
     | '/forgot-password/'
     | '/login/'
     | '/register/'
-    | '/app/dashboard/'
+    | '/bphtb/$id/'
+    | '/bphtb/create/'
+    | '/laporan/harian/'
+    | '/laporan/per-wp/'
+    | '/laporan/piutang/'
+    | '/laporan/realisasi/'
+    | '/pbb/$nop/'
+    | '/pbb/sppt/'
+    | '/pembayaran/$id/'
+    | '/pembayaran/create/'
+    | '/pembayaran/rekonsiliasi/'
+    | '/penagihan/stpd/'
+    | '/penetapan/$id/'
+    | '/penetapan/create/'
+    | '/pengaturan/penandatangan/'
+    | '/pengaturan/pengguna/'
+    | '/pengaturan/peran/'
+    | '/pengaturan/tampilan/'
+    | '/pengaturan/target/'
+    | '/pengaturan/tarif/'
+    | '/pengaturan/wilayah/'
+    | '/retribusi/kepelabuhanan/'
+    | '/retribusi/skrd/'
+    | '/retribusi/tanda-masuk/'
+    | '/sptpd/$id/'
+    | '/sptpd/create/'
+    | '/wajib-pajak/$id/'
+    | '/wajib-pajak/create/'
+    | '/pbb/objek/create/'
+    | '/pbb/sppt/terbit/'
+    | '/penagihan/stpd/$id/'
+    | '/penagihan/stpd/create/'
+    | '/pengaturan/peran/$roleId/'
+    | '/pengaturan/peran/create/'
+    | '/retribusi/kepelabuhanan/$id/'
+    | '/retribusi/kepelabuhanan/create/'
+    | '/retribusi/kepelabuhanan/kapal/'
+    | '/retribusi/skrd/$id/'
+    | '/retribusi/skrd/create/'
+    | '/retribusi/tanda-masuk/$id/'
+    | '/retribusi/tanda-masuk/create/'
+    | '/retribusi/tanda-masuk/rekonsiliasi/'
+    | '/wajib-pajak/$id/edit/'
+    | '/wajib-pajak/$id/kartu/'
+    | '/wajib-pajak/$id/objek/'
+    | '/wajib-pajak/$id/riwayat/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/app'
+    | '/retribusi'
+    | '/bphtb'
+    | '/dashboard'
+    | '/laporan'
+    | '/pbb'
+    | '/pembayaran'
+    | '/penagihan'
+    | '/penetapan'
+    | '/pengaturan'
+    | '/sptpd'
+    | '/wajib-pajak'
     | '/forgot-password'
     | '/login'
     | '/register'
-    | '/app/dashboard'
+    | '/bphtb/$id'
+    | '/bphtb/create'
+    | '/laporan/harian'
+    | '/laporan/per-wp'
+    | '/laporan/piutang'
+    | '/laporan/realisasi'
+    | '/pbb/$nop'
+    | '/pbb/sppt'
+    | '/pembayaran/$id'
+    | '/pembayaran/create'
+    | '/pembayaran/rekonsiliasi'
+    | '/penagihan/stpd'
+    | '/penetapan/$id'
+    | '/penetapan/create'
+    | '/pengaturan/penandatangan'
+    | '/pengaturan/pengguna'
+    | '/pengaturan/peran'
+    | '/pengaturan/tampilan'
+    | '/pengaturan/target'
+    | '/pengaturan/tarif'
+    | '/pengaturan/wilayah'
+    | '/retribusi/kepelabuhanan'
+    | '/retribusi/skrd'
+    | '/retribusi/tanda-masuk'
+    | '/sptpd/$id'
+    | '/sptpd/create'
+    | '/wajib-pajak/$id'
+    | '/wajib-pajak/create'
+    | '/pbb/objek/create'
+    | '/pbb/sppt/terbit'
+    | '/penagihan/stpd/$id'
+    | '/penagihan/stpd/create'
+    | '/pengaturan/peran/$roleId'
+    | '/pengaturan/peran/create'
+    | '/retribusi/kepelabuhanan/$id'
+    | '/retribusi/kepelabuhanan/create'
+    | '/retribusi/kepelabuhanan/kapal'
+    | '/retribusi/skrd/$id'
+    | '/retribusi/skrd/create'
+    | '/retribusi/tanda-masuk/$id'
+    | '/retribusi/tanda-masuk/create'
+    | '/retribusi/tanda-masuk/rekonsiliasi'
+    | '/wajib-pajak/$id/edit'
+    | '/wajib-pajak/$id/kartu'
+    | '/wajib-pajak/$id/objek'
+    | '/wajib-pajak/$id/riwayat'
   id:
     | '__root__'
     | '/'
+    | '/_app'
     | '/_auth'
-    | '/app'
-    | '/app/'
+    | '/_app/laporan'
+    | '/_app/pengaturan'
+    | '/_app/retribusi'
+    | '/_app/wajib-pajak/$id'
+    | '/_app/bphtb/'
+    | '/_app/dashboard/'
+    | '/_app/laporan/'
+    | '/_app/pbb/'
+    | '/_app/pembayaran/'
+    | '/_app/penagihan/'
+    | '/_app/penetapan/'
+    | '/_app/pengaturan/'
+    | '/_app/sptpd/'
+    | '/_app/wajib-pajak/'
     | '/_auth/forgot-password/'
     | '/_auth/login/'
     | '/_auth/register/'
-    | '/app/dashboard/'
+    | '/_app/bphtb/$id/'
+    | '/_app/bphtb/create/'
+    | '/_app/laporan/harian/'
+    | '/_app/laporan/per-wp/'
+    | '/_app/laporan/piutang/'
+    | '/_app/laporan/realisasi/'
+    | '/_app/pbb/$nop/'
+    | '/_app/pbb/sppt/'
+    | '/_app/pembayaran/$id/'
+    | '/_app/pembayaran/create/'
+    | '/_app/pembayaran/rekonsiliasi/'
+    | '/_app/penagihan/stpd/'
+    | '/_app/penetapan/$id/'
+    | '/_app/penetapan/create/'
+    | '/_app/pengaturan/penandatangan/'
+    | '/_app/pengaturan/pengguna/'
+    | '/_app/pengaturan/peran/'
+    | '/_app/pengaturan/tampilan/'
+    | '/_app/pengaturan/target/'
+    | '/_app/pengaturan/tarif/'
+    | '/_app/pengaturan/wilayah/'
+    | '/_app/retribusi/kepelabuhanan/'
+    | '/_app/retribusi/skrd/'
+    | '/_app/retribusi/tanda-masuk/'
+    | '/_app/sptpd/$id/'
+    | '/_app/sptpd/create/'
+    | '/_app/wajib-pajak/$id/'
+    | '/_app/wajib-pajak/create/'
+    | '/_app/pbb/objek/create/'
+    | '/_app/pbb/sppt/terbit/'
+    | '/_app/penagihan/stpd/$id/'
+    | '/_app/penagihan/stpd/create/'
+    | '/_app/pengaturan/peran/$roleId/'
+    | '/_app/pengaturan/peran/create/'
+    | '/_app/retribusi/kepelabuhanan/$id/'
+    | '/_app/retribusi/kepelabuhanan/create/'
+    | '/_app/retribusi/kepelabuhanan/kapal/'
+    | '/_app/retribusi/skrd/$id/'
+    | '/_app/retribusi/skrd/create/'
+    | '/_app/retribusi/tanda-masuk/$id/'
+    | '/_app/retribusi/tanda-masuk/create/'
+    | '/_app/retribusi/tanda-masuk/rekonsiliasi/'
+    | '/_app/wajib-pajak/$id/edit/'
+    | '/_app/wajib-pajak/$id/kartu/'
+    | '/_app/wajib-pajak/$id/objek/'
+    | '/_app/wajib-pajak/$id/riwayat/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  AuthRouteRoute: typeof AuthRouteRouteWithChildren
   AppRouteRoute: typeof AppRouteRouteWithChildren
+  AuthRouteRoute: typeof AuthRouteRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -131,6 +843,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_app': {
+      id: '/_app'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AppRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/_auth': {
       id: '/_auth'
       path: ''
@@ -138,18 +857,102 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/app': {
-      id: '/app'
-      path: '/app'
-      fullPath: '/app'
-      preLoaderRoute: typeof AppRouteRouteImport
-      parentRoute: typeof rootRouteImport
+    '/_app/laporan': {
+      id: '/_app/laporan'
+      path: '/laporan'
+      fullPath: '/laporan'
+      preLoaderRoute: typeof AppLaporanRouteRouteImport
+      parentRoute: typeof AppRouteRoute
     }
-    '/app/': {
-      id: '/app/'
+    '/_app/pengaturan': {
+      id: '/_app/pengaturan'
+      path: '/pengaturan'
+      fullPath: '/pengaturan'
+      preLoaderRoute: typeof AppPengaturanRouteRouteImport
+      parentRoute: typeof AppRouteRoute
+    }
+    '/_app/retribusi': {
+      id: '/_app/retribusi'
+      path: '/retribusi'
+      fullPath: '/retribusi'
+      preLoaderRoute: typeof AppRetribusiRouteRouteImport
+      parentRoute: typeof AppRouteRoute
+    }
+    '/_app/bphtb/': {
+      id: '/_app/bphtb/'
+      path: '/bphtb'
+      fullPath: '/bphtb/'
+      preLoaderRoute: typeof AppBphtbIndexRouteImport
+      parentRoute: typeof AppRouteRoute
+    }
+    '/_app/dashboard/': {
+      id: '/_app/dashboard/'
+      path: '/dashboard'
+      fullPath: '/dashboard/'
+      preLoaderRoute: typeof AppDashboardIndexRouteImport
+      parentRoute: typeof AppRouteRoute
+    }
+    '/_app/laporan/': {
+      id: '/_app/laporan/'
       path: '/'
-      fullPath: '/app/'
-      preLoaderRoute: typeof AppIndexRouteImport
+      fullPath: '/laporan/'
+      preLoaderRoute: typeof AppLaporanIndexRouteImport
+      parentRoute: typeof AppLaporanRouteRoute
+    }
+    '/_app/pbb/': {
+      id: '/_app/pbb/'
+      path: '/pbb'
+      fullPath: '/pbb/'
+      preLoaderRoute: typeof AppPbbIndexRouteImport
+      parentRoute: typeof AppRouteRoute
+    }
+    '/_app/pembayaran/': {
+      id: '/_app/pembayaran/'
+      path: '/pembayaran'
+      fullPath: '/pembayaran/'
+      preLoaderRoute: typeof AppPembayaranIndexRouteImport
+      parentRoute: typeof AppRouteRoute
+    }
+    '/_app/penagihan/': {
+      id: '/_app/penagihan/'
+      path: '/penagihan'
+      fullPath: '/penagihan/'
+      preLoaderRoute: typeof AppPenagihanIndexRouteImport
+      parentRoute: typeof AppRouteRoute
+    }
+    '/_app/penetapan/': {
+      id: '/_app/penetapan/'
+      path: '/penetapan'
+      fullPath: '/penetapan/'
+      preLoaderRoute: typeof AppPenetapanIndexRouteImport
+      parentRoute: typeof AppRouteRoute
+    }
+    '/_app/pengaturan/': {
+      id: '/_app/pengaturan/'
+      path: '/'
+      fullPath: '/pengaturan/'
+      preLoaderRoute: typeof AppPengaturanIndexRouteImport
+      parentRoute: typeof AppPengaturanRouteRoute
+    }
+    '/_app/sptpd/': {
+      id: '/_app/sptpd/'
+      path: '/sptpd'
+      fullPath: '/sptpd/'
+      preLoaderRoute: typeof AppSptpdIndexRouteImport
+      parentRoute: typeof AppRouteRoute
+    }
+    '/_app/wajib-pajak/': {
+      id: '/_app/wajib-pajak/'
+      path: '/wajib-pajak'
+      fullPath: '/wajib-pajak/'
+      preLoaderRoute: typeof AppWajibPajakIndexRouteImport
+      parentRoute: typeof AppRouteRoute
+    }
+    '/_app/wajib-pajak/$id': {
+      id: '/_app/wajib-pajak/$id'
+      path: '/wajib-pajak/$id'
+      fullPath: '/wajib-pajak/$id'
+      preLoaderRoute: typeof AppWajibPajakIdRouteRouteImport
       parentRoute: typeof AppRouteRoute
     }
     '/_auth/forgot-password/': {
@@ -173,15 +976,501 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthRegisterIndexRouteImport
       parentRoute: typeof AuthRouteRoute
     }
-    '/app/dashboard/': {
-      id: '/app/dashboard/'
-      path: '/dashboard'
-      fullPath: '/app/dashboard/'
-      preLoaderRoute: typeof AppDashboardIndexRouteImport
+    '/_app/bphtb/$id/': {
+      id: '/_app/bphtb/$id/'
+      path: '/bphtb/$id'
+      fullPath: '/bphtb/$id/'
+      preLoaderRoute: typeof AppBphtbIdIndexRouteImport
       parentRoute: typeof AppRouteRoute
+    }
+    '/_app/bphtb/create/': {
+      id: '/_app/bphtb/create/'
+      path: '/bphtb/create'
+      fullPath: '/bphtb/create/'
+      preLoaderRoute: typeof AppBphtbCreateIndexRouteImport
+      parentRoute: typeof AppRouteRoute
+    }
+    '/_app/laporan/harian/': {
+      id: '/_app/laporan/harian/'
+      path: '/harian'
+      fullPath: '/laporan/harian/'
+      preLoaderRoute: typeof AppLaporanHarianIndexRouteImport
+      parentRoute: typeof AppLaporanRouteRoute
+    }
+    '/_app/laporan/per-wp/': {
+      id: '/_app/laporan/per-wp/'
+      path: '/per-wp'
+      fullPath: '/laporan/per-wp/'
+      preLoaderRoute: typeof AppLaporanPerWpIndexRouteImport
+      parentRoute: typeof AppLaporanRouteRoute
+    }
+    '/_app/laporan/piutang/': {
+      id: '/_app/laporan/piutang/'
+      path: '/piutang'
+      fullPath: '/laporan/piutang/'
+      preLoaderRoute: typeof AppLaporanPiutangIndexRouteImport
+      parentRoute: typeof AppLaporanRouteRoute
+    }
+    '/_app/laporan/realisasi/': {
+      id: '/_app/laporan/realisasi/'
+      path: '/realisasi'
+      fullPath: '/laporan/realisasi/'
+      preLoaderRoute: typeof AppLaporanRealisasiIndexRouteImport
+      parentRoute: typeof AppLaporanRouteRoute
+    }
+    '/_app/pbb/$nop/': {
+      id: '/_app/pbb/$nop/'
+      path: '/pbb/$nop'
+      fullPath: '/pbb/$nop/'
+      preLoaderRoute: typeof AppPbbNopIndexRouteImport
+      parentRoute: typeof AppRouteRoute
+    }
+    '/_app/pbb/sppt/': {
+      id: '/_app/pbb/sppt/'
+      path: '/pbb/sppt'
+      fullPath: '/pbb/sppt/'
+      preLoaderRoute: typeof AppPbbSpptIndexRouteImport
+      parentRoute: typeof AppRouteRoute
+    }
+    '/_app/pembayaran/$id/': {
+      id: '/_app/pembayaran/$id/'
+      path: '/pembayaran/$id'
+      fullPath: '/pembayaran/$id/'
+      preLoaderRoute: typeof AppPembayaranIdIndexRouteImport
+      parentRoute: typeof AppRouteRoute
+    }
+    '/_app/pembayaran/create/': {
+      id: '/_app/pembayaran/create/'
+      path: '/pembayaran/create'
+      fullPath: '/pembayaran/create/'
+      preLoaderRoute: typeof AppPembayaranCreateIndexRouteImport
+      parentRoute: typeof AppRouteRoute
+    }
+    '/_app/pembayaran/rekonsiliasi/': {
+      id: '/_app/pembayaran/rekonsiliasi/'
+      path: '/pembayaran/rekonsiliasi'
+      fullPath: '/pembayaran/rekonsiliasi/'
+      preLoaderRoute: typeof AppPembayaranRekonsiliasiIndexRouteImport
+      parentRoute: typeof AppRouteRoute
+    }
+    '/_app/penagihan/stpd/': {
+      id: '/_app/penagihan/stpd/'
+      path: '/penagihan/stpd'
+      fullPath: '/penagihan/stpd/'
+      preLoaderRoute: typeof AppPenagihanStpdIndexRouteImport
+      parentRoute: typeof AppRouteRoute
+    }
+    '/_app/penetapan/$id/': {
+      id: '/_app/penetapan/$id/'
+      path: '/penetapan/$id'
+      fullPath: '/penetapan/$id/'
+      preLoaderRoute: typeof AppPenetapanIdIndexRouteImport
+      parentRoute: typeof AppRouteRoute
+    }
+    '/_app/penetapan/create/': {
+      id: '/_app/penetapan/create/'
+      path: '/penetapan/create'
+      fullPath: '/penetapan/create/'
+      preLoaderRoute: typeof AppPenetapanCreateIndexRouteImport
+      parentRoute: typeof AppRouteRoute
+    }
+    '/_app/pengaturan/penandatangan/': {
+      id: '/_app/pengaturan/penandatangan/'
+      path: '/penandatangan'
+      fullPath: '/pengaturan/penandatangan/'
+      preLoaderRoute: typeof AppPengaturanPenandatanganIndexRouteImport
+      parentRoute: typeof AppPengaturanRouteRoute
+    }
+    '/_app/pengaturan/pengguna/': {
+      id: '/_app/pengaturan/pengguna/'
+      path: '/pengguna'
+      fullPath: '/pengaturan/pengguna/'
+      preLoaderRoute: typeof AppPengaturanPenggunaIndexRouteImport
+      parentRoute: typeof AppPengaturanRouteRoute
+    }
+    '/_app/pengaturan/peran/': {
+      id: '/_app/pengaturan/peran/'
+      path: '/peran'
+      fullPath: '/pengaturan/peran/'
+      preLoaderRoute: typeof AppPengaturanPeranIndexRouteImport
+      parentRoute: typeof AppPengaturanRouteRoute
+    }
+    '/_app/pengaturan/tampilan/': {
+      id: '/_app/pengaturan/tampilan/'
+      path: '/tampilan'
+      fullPath: '/pengaturan/tampilan/'
+      preLoaderRoute: typeof AppPengaturanTampilanIndexRouteImport
+      parentRoute: typeof AppPengaturanRouteRoute
+    }
+    '/_app/pengaturan/target/': {
+      id: '/_app/pengaturan/target/'
+      path: '/target'
+      fullPath: '/pengaturan/target/'
+      preLoaderRoute: typeof AppPengaturanTargetIndexRouteImport
+      parentRoute: typeof AppPengaturanRouteRoute
+    }
+    '/_app/pengaturan/tarif/': {
+      id: '/_app/pengaturan/tarif/'
+      path: '/tarif'
+      fullPath: '/pengaturan/tarif/'
+      preLoaderRoute: typeof AppPengaturanTarifIndexRouteImport
+      parentRoute: typeof AppPengaturanRouteRoute
+    }
+    '/_app/pengaturan/wilayah/': {
+      id: '/_app/pengaturan/wilayah/'
+      path: '/wilayah'
+      fullPath: '/pengaturan/wilayah/'
+      preLoaderRoute: typeof AppPengaturanWilayahIndexRouteImport
+      parentRoute: typeof AppPengaturanRouteRoute
+    }
+    '/_app/retribusi/kepelabuhanan/': {
+      id: '/_app/retribusi/kepelabuhanan/'
+      path: '/kepelabuhanan'
+      fullPath: '/retribusi/kepelabuhanan/'
+      preLoaderRoute: typeof AppRetribusiKepelabuhananIndexRouteImport
+      parentRoute: typeof AppRetribusiRouteRoute
+    }
+    '/_app/retribusi/skrd/': {
+      id: '/_app/retribusi/skrd/'
+      path: '/skrd'
+      fullPath: '/retribusi/skrd/'
+      preLoaderRoute: typeof AppRetribusiSkrdIndexRouteImport
+      parentRoute: typeof AppRetribusiRouteRoute
+    }
+    '/_app/retribusi/tanda-masuk/': {
+      id: '/_app/retribusi/tanda-masuk/'
+      path: '/tanda-masuk'
+      fullPath: '/retribusi/tanda-masuk/'
+      preLoaderRoute: typeof AppRetribusiTandaMasukIndexRouteImport
+      parentRoute: typeof AppRetribusiRouteRoute
+    }
+    '/_app/sptpd/$id/': {
+      id: '/_app/sptpd/$id/'
+      path: '/sptpd/$id'
+      fullPath: '/sptpd/$id/'
+      preLoaderRoute: typeof AppSptpdIdIndexRouteImport
+      parentRoute: typeof AppRouteRoute
+    }
+    '/_app/sptpd/create/': {
+      id: '/_app/sptpd/create/'
+      path: '/sptpd/create'
+      fullPath: '/sptpd/create/'
+      preLoaderRoute: typeof AppSptpdCreateIndexRouteImport
+      parentRoute: typeof AppRouteRoute
+    }
+    '/_app/wajib-pajak/$id/': {
+      id: '/_app/wajib-pajak/$id/'
+      path: '/'
+      fullPath: '/wajib-pajak/$id/'
+      preLoaderRoute: typeof AppWajibPajakIdIndexRouteImport
+      parentRoute: typeof AppWajibPajakIdRouteRoute
+    }
+    '/_app/wajib-pajak/create/': {
+      id: '/_app/wajib-pajak/create/'
+      path: '/wajib-pajak/create'
+      fullPath: '/wajib-pajak/create/'
+      preLoaderRoute: typeof AppWajibPajakCreateIndexRouteImport
+      parentRoute: typeof AppRouteRoute
+    }
+    '/_app/pbb/objek/create/': {
+      id: '/_app/pbb/objek/create/'
+      path: '/pbb/objek/create'
+      fullPath: '/pbb/objek/create/'
+      preLoaderRoute: typeof AppPbbObjekCreateIndexRouteImport
+      parentRoute: typeof AppRouteRoute
+    }
+    '/_app/pbb/sppt/terbit/': {
+      id: '/_app/pbb/sppt/terbit/'
+      path: '/pbb/sppt/terbit'
+      fullPath: '/pbb/sppt/terbit/'
+      preLoaderRoute: typeof AppPbbSpptTerbitIndexRouteImport
+      parentRoute: typeof AppRouteRoute
+    }
+    '/_app/penagihan/stpd/$id/': {
+      id: '/_app/penagihan/stpd/$id/'
+      path: '/penagihan/stpd/$id'
+      fullPath: '/penagihan/stpd/$id/'
+      preLoaderRoute: typeof AppPenagihanStpdIdIndexRouteImport
+      parentRoute: typeof AppRouteRoute
+    }
+    '/_app/penagihan/stpd/create/': {
+      id: '/_app/penagihan/stpd/create/'
+      path: '/penagihan/stpd/create'
+      fullPath: '/penagihan/stpd/create/'
+      preLoaderRoute: typeof AppPenagihanStpdCreateIndexRouteImport
+      parentRoute: typeof AppRouteRoute
+    }
+    '/_app/pengaturan/peran/$roleId/': {
+      id: '/_app/pengaturan/peran/$roleId/'
+      path: '/peran/$roleId'
+      fullPath: '/pengaturan/peran/$roleId/'
+      preLoaderRoute: typeof AppPengaturanPeranRoleIdIndexRouteImport
+      parentRoute: typeof AppPengaturanRouteRoute
+    }
+    '/_app/pengaturan/peran/create/': {
+      id: '/_app/pengaturan/peran/create/'
+      path: '/peran/create'
+      fullPath: '/pengaturan/peran/create/'
+      preLoaderRoute: typeof AppPengaturanPeranCreateIndexRouteImport
+      parentRoute: typeof AppPengaturanRouteRoute
+    }
+    '/_app/retribusi/kepelabuhanan/$id/': {
+      id: '/_app/retribusi/kepelabuhanan/$id/'
+      path: '/kepelabuhanan/$id'
+      fullPath: '/retribusi/kepelabuhanan/$id/'
+      preLoaderRoute: typeof AppRetribusiKepelabuhananIdIndexRouteImport
+      parentRoute: typeof AppRetribusiRouteRoute
+    }
+    '/_app/retribusi/kepelabuhanan/create/': {
+      id: '/_app/retribusi/kepelabuhanan/create/'
+      path: '/kepelabuhanan/create'
+      fullPath: '/retribusi/kepelabuhanan/create/'
+      preLoaderRoute: typeof AppRetribusiKepelabuhananCreateIndexRouteImport
+      parentRoute: typeof AppRetribusiRouteRoute
+    }
+    '/_app/retribusi/kepelabuhanan/kapal/': {
+      id: '/_app/retribusi/kepelabuhanan/kapal/'
+      path: '/kepelabuhanan/kapal'
+      fullPath: '/retribusi/kepelabuhanan/kapal/'
+      preLoaderRoute: typeof AppRetribusiKepelabuhananKapalIndexRouteImport
+      parentRoute: typeof AppRetribusiRouteRoute
+    }
+    '/_app/retribusi/skrd/$id/': {
+      id: '/_app/retribusi/skrd/$id/'
+      path: '/skrd/$id'
+      fullPath: '/retribusi/skrd/$id/'
+      preLoaderRoute: typeof AppRetribusiSkrdIdIndexRouteImport
+      parentRoute: typeof AppRetribusiRouteRoute
+    }
+    '/_app/retribusi/skrd/create/': {
+      id: '/_app/retribusi/skrd/create/'
+      path: '/skrd/create'
+      fullPath: '/retribusi/skrd/create/'
+      preLoaderRoute: typeof AppRetribusiSkrdCreateIndexRouteImport
+      parentRoute: typeof AppRetribusiRouteRoute
+    }
+    '/_app/retribusi/tanda-masuk/$id/': {
+      id: '/_app/retribusi/tanda-masuk/$id/'
+      path: '/tanda-masuk/$id'
+      fullPath: '/retribusi/tanda-masuk/$id/'
+      preLoaderRoute: typeof AppRetribusiTandaMasukIdIndexRouteImport
+      parentRoute: typeof AppRetribusiRouteRoute
+    }
+    '/_app/retribusi/tanda-masuk/create/': {
+      id: '/_app/retribusi/tanda-masuk/create/'
+      path: '/tanda-masuk/create'
+      fullPath: '/retribusi/tanda-masuk/create/'
+      preLoaderRoute: typeof AppRetribusiTandaMasukCreateIndexRouteImport
+      parentRoute: typeof AppRetribusiRouteRoute
+    }
+    '/_app/retribusi/tanda-masuk/rekonsiliasi/': {
+      id: '/_app/retribusi/tanda-masuk/rekonsiliasi/'
+      path: '/tanda-masuk/rekonsiliasi'
+      fullPath: '/retribusi/tanda-masuk/rekonsiliasi/'
+      preLoaderRoute: typeof AppRetribusiTandaMasukRekonsiliasiIndexRouteImport
+      parentRoute: typeof AppRetribusiRouteRoute
+    }
+    '/_app/wajib-pajak/$id/edit/': {
+      id: '/_app/wajib-pajak/$id/edit/'
+      path: '/edit'
+      fullPath: '/wajib-pajak/$id/edit/'
+      preLoaderRoute: typeof AppWajibPajakIdEditIndexRouteImport
+      parentRoute: typeof AppWajibPajakIdRouteRoute
+    }
+    '/_app/wajib-pajak/$id/kartu/': {
+      id: '/_app/wajib-pajak/$id/kartu/'
+      path: '/kartu'
+      fullPath: '/wajib-pajak/$id/kartu/'
+      preLoaderRoute: typeof AppWajibPajakIdKartuIndexRouteImport
+      parentRoute: typeof AppWajibPajakIdRouteRoute
+    }
+    '/_app/wajib-pajak/$id/objek/': {
+      id: '/_app/wajib-pajak/$id/objek/'
+      path: '/objek'
+      fullPath: '/wajib-pajak/$id/objek/'
+      preLoaderRoute: typeof AppWajibPajakIdObjekIndexRouteImport
+      parentRoute: typeof AppWajibPajakIdRouteRoute
+    }
+    '/_app/wajib-pajak/$id/riwayat/': {
+      id: '/_app/wajib-pajak/$id/riwayat/'
+      path: '/riwayat'
+      fullPath: '/wajib-pajak/$id/riwayat/'
+      preLoaderRoute: typeof AppWajibPajakIdRiwayatIndexRouteImport
+      parentRoute: typeof AppWajibPajakIdRouteRoute
     }
   }
 }
+
+interface AppLaporanRouteRouteChildren {
+  AppLaporanIndexRoute: typeof AppLaporanIndexRoute
+  AppLaporanHarianIndexRoute: typeof AppLaporanHarianIndexRoute
+  AppLaporanPerWpIndexRoute: typeof AppLaporanPerWpIndexRoute
+  AppLaporanPiutangIndexRoute: typeof AppLaporanPiutangIndexRoute
+  AppLaporanRealisasiIndexRoute: typeof AppLaporanRealisasiIndexRoute
+}
+
+const AppLaporanRouteRouteChildren: AppLaporanRouteRouteChildren = {
+  AppLaporanIndexRoute: AppLaporanIndexRoute,
+  AppLaporanHarianIndexRoute: AppLaporanHarianIndexRoute,
+  AppLaporanPerWpIndexRoute: AppLaporanPerWpIndexRoute,
+  AppLaporanPiutangIndexRoute: AppLaporanPiutangIndexRoute,
+  AppLaporanRealisasiIndexRoute: AppLaporanRealisasiIndexRoute,
+}
+
+const AppLaporanRouteRouteWithChildren = AppLaporanRouteRoute._addFileChildren(
+  AppLaporanRouteRouteChildren,
+)
+
+interface AppPengaturanRouteRouteChildren {
+  AppPengaturanIndexRoute: typeof AppPengaturanIndexRoute
+  AppPengaturanPenandatanganIndexRoute: typeof AppPengaturanPenandatanganIndexRoute
+  AppPengaturanPenggunaIndexRoute: typeof AppPengaturanPenggunaIndexRoute
+  AppPengaturanPeranIndexRoute: typeof AppPengaturanPeranIndexRoute
+  AppPengaturanTampilanIndexRoute: typeof AppPengaturanTampilanIndexRoute
+  AppPengaturanTargetIndexRoute: typeof AppPengaturanTargetIndexRoute
+  AppPengaturanTarifIndexRoute: typeof AppPengaturanTarifIndexRoute
+  AppPengaturanWilayahIndexRoute: typeof AppPengaturanWilayahIndexRoute
+  AppPengaturanPeranRoleIdIndexRoute: typeof AppPengaturanPeranRoleIdIndexRoute
+  AppPengaturanPeranCreateIndexRoute: typeof AppPengaturanPeranCreateIndexRoute
+}
+
+const AppPengaturanRouteRouteChildren: AppPengaturanRouteRouteChildren = {
+  AppPengaturanIndexRoute: AppPengaturanIndexRoute,
+  AppPengaturanPenandatanganIndexRoute: AppPengaturanPenandatanganIndexRoute,
+  AppPengaturanPenggunaIndexRoute: AppPengaturanPenggunaIndexRoute,
+  AppPengaturanPeranIndexRoute: AppPengaturanPeranIndexRoute,
+  AppPengaturanTampilanIndexRoute: AppPengaturanTampilanIndexRoute,
+  AppPengaturanTargetIndexRoute: AppPengaturanTargetIndexRoute,
+  AppPengaturanTarifIndexRoute: AppPengaturanTarifIndexRoute,
+  AppPengaturanWilayahIndexRoute: AppPengaturanWilayahIndexRoute,
+  AppPengaturanPeranRoleIdIndexRoute: AppPengaturanPeranRoleIdIndexRoute,
+  AppPengaturanPeranCreateIndexRoute: AppPengaturanPeranCreateIndexRoute,
+}
+
+const AppPengaturanRouteRouteWithChildren =
+  AppPengaturanRouteRoute._addFileChildren(AppPengaturanRouteRouteChildren)
+
+interface AppRetribusiRouteRouteChildren {
+  AppRetribusiKepelabuhananIndexRoute: typeof AppRetribusiKepelabuhananIndexRoute
+  AppRetribusiSkrdIndexRoute: typeof AppRetribusiSkrdIndexRoute
+  AppRetribusiTandaMasukIndexRoute: typeof AppRetribusiTandaMasukIndexRoute
+  AppRetribusiKepelabuhananIdIndexRoute: typeof AppRetribusiKepelabuhananIdIndexRoute
+  AppRetribusiKepelabuhananCreateIndexRoute: typeof AppRetribusiKepelabuhananCreateIndexRoute
+  AppRetribusiKepelabuhananKapalIndexRoute: typeof AppRetribusiKepelabuhananKapalIndexRoute
+  AppRetribusiSkrdIdIndexRoute: typeof AppRetribusiSkrdIdIndexRoute
+  AppRetribusiSkrdCreateIndexRoute: typeof AppRetribusiSkrdCreateIndexRoute
+  AppRetribusiTandaMasukIdIndexRoute: typeof AppRetribusiTandaMasukIdIndexRoute
+  AppRetribusiTandaMasukCreateIndexRoute: typeof AppRetribusiTandaMasukCreateIndexRoute
+  AppRetribusiTandaMasukRekonsiliasiIndexRoute: typeof AppRetribusiTandaMasukRekonsiliasiIndexRoute
+}
+
+const AppRetribusiRouteRouteChildren: AppRetribusiRouteRouteChildren = {
+  AppRetribusiKepelabuhananIndexRoute: AppRetribusiKepelabuhananIndexRoute,
+  AppRetribusiSkrdIndexRoute: AppRetribusiSkrdIndexRoute,
+  AppRetribusiTandaMasukIndexRoute: AppRetribusiTandaMasukIndexRoute,
+  AppRetribusiKepelabuhananIdIndexRoute: AppRetribusiKepelabuhananIdIndexRoute,
+  AppRetribusiKepelabuhananCreateIndexRoute:
+    AppRetribusiKepelabuhananCreateIndexRoute,
+  AppRetribusiKepelabuhananKapalIndexRoute:
+    AppRetribusiKepelabuhananKapalIndexRoute,
+  AppRetribusiSkrdIdIndexRoute: AppRetribusiSkrdIdIndexRoute,
+  AppRetribusiSkrdCreateIndexRoute: AppRetribusiSkrdCreateIndexRoute,
+  AppRetribusiTandaMasukIdIndexRoute: AppRetribusiTandaMasukIdIndexRoute,
+  AppRetribusiTandaMasukCreateIndexRoute:
+    AppRetribusiTandaMasukCreateIndexRoute,
+  AppRetribusiTandaMasukRekonsiliasiIndexRoute:
+    AppRetribusiTandaMasukRekonsiliasiIndexRoute,
+}
+
+const AppRetribusiRouteRouteWithChildren =
+  AppRetribusiRouteRoute._addFileChildren(AppRetribusiRouteRouteChildren)
+
+interface AppWajibPajakIdRouteRouteChildren {
+  AppWajibPajakIdIndexRoute: typeof AppWajibPajakIdIndexRoute
+  AppWajibPajakIdEditIndexRoute: typeof AppWajibPajakIdEditIndexRoute
+  AppWajibPajakIdKartuIndexRoute: typeof AppWajibPajakIdKartuIndexRoute
+  AppWajibPajakIdObjekIndexRoute: typeof AppWajibPajakIdObjekIndexRoute
+  AppWajibPajakIdRiwayatIndexRoute: typeof AppWajibPajakIdRiwayatIndexRoute
+}
+
+const AppWajibPajakIdRouteRouteChildren: AppWajibPajakIdRouteRouteChildren = {
+  AppWajibPajakIdIndexRoute: AppWajibPajakIdIndexRoute,
+  AppWajibPajakIdEditIndexRoute: AppWajibPajakIdEditIndexRoute,
+  AppWajibPajakIdKartuIndexRoute: AppWajibPajakIdKartuIndexRoute,
+  AppWajibPajakIdObjekIndexRoute: AppWajibPajakIdObjekIndexRoute,
+  AppWajibPajakIdRiwayatIndexRoute: AppWajibPajakIdRiwayatIndexRoute,
+}
+
+const AppWajibPajakIdRouteRouteWithChildren =
+  AppWajibPajakIdRouteRoute._addFileChildren(AppWajibPajakIdRouteRouteChildren)
+
+interface AppRouteRouteChildren {
+  AppLaporanRouteRoute: typeof AppLaporanRouteRouteWithChildren
+  AppPengaturanRouteRoute: typeof AppPengaturanRouteRouteWithChildren
+  AppRetribusiRouteRoute: typeof AppRetribusiRouteRouteWithChildren
+  AppWajibPajakIdRouteRoute: typeof AppWajibPajakIdRouteRouteWithChildren
+  AppBphtbIndexRoute: typeof AppBphtbIndexRoute
+  AppDashboardIndexRoute: typeof AppDashboardIndexRoute
+  AppPbbIndexRoute: typeof AppPbbIndexRoute
+  AppPembayaranIndexRoute: typeof AppPembayaranIndexRoute
+  AppPenagihanIndexRoute: typeof AppPenagihanIndexRoute
+  AppPenetapanIndexRoute: typeof AppPenetapanIndexRoute
+  AppSptpdIndexRoute: typeof AppSptpdIndexRoute
+  AppWajibPajakIndexRoute: typeof AppWajibPajakIndexRoute
+  AppBphtbIdIndexRoute: typeof AppBphtbIdIndexRoute
+  AppBphtbCreateIndexRoute: typeof AppBphtbCreateIndexRoute
+  AppPbbNopIndexRoute: typeof AppPbbNopIndexRoute
+  AppPbbSpptIndexRoute: typeof AppPbbSpptIndexRoute
+  AppPembayaranIdIndexRoute: typeof AppPembayaranIdIndexRoute
+  AppPembayaranCreateIndexRoute: typeof AppPembayaranCreateIndexRoute
+  AppPembayaranRekonsiliasiIndexRoute: typeof AppPembayaranRekonsiliasiIndexRoute
+  AppPenagihanStpdIndexRoute: typeof AppPenagihanStpdIndexRoute
+  AppPenetapanIdIndexRoute: typeof AppPenetapanIdIndexRoute
+  AppPenetapanCreateIndexRoute: typeof AppPenetapanCreateIndexRoute
+  AppSptpdIdIndexRoute: typeof AppSptpdIdIndexRoute
+  AppSptpdCreateIndexRoute: typeof AppSptpdCreateIndexRoute
+  AppWajibPajakCreateIndexRoute: typeof AppWajibPajakCreateIndexRoute
+  AppPbbObjekCreateIndexRoute: typeof AppPbbObjekCreateIndexRoute
+  AppPbbSpptTerbitIndexRoute: typeof AppPbbSpptTerbitIndexRoute
+  AppPenagihanStpdIdIndexRoute: typeof AppPenagihanStpdIdIndexRoute
+  AppPenagihanStpdCreateIndexRoute: typeof AppPenagihanStpdCreateIndexRoute
+}
+
+const AppRouteRouteChildren: AppRouteRouteChildren = {
+  AppLaporanRouteRoute: AppLaporanRouteRouteWithChildren,
+  AppPengaturanRouteRoute: AppPengaturanRouteRouteWithChildren,
+  AppRetribusiRouteRoute: AppRetribusiRouteRouteWithChildren,
+  AppWajibPajakIdRouteRoute: AppWajibPajakIdRouteRouteWithChildren,
+  AppBphtbIndexRoute: AppBphtbIndexRoute,
+  AppDashboardIndexRoute: AppDashboardIndexRoute,
+  AppPbbIndexRoute: AppPbbIndexRoute,
+  AppPembayaranIndexRoute: AppPembayaranIndexRoute,
+  AppPenagihanIndexRoute: AppPenagihanIndexRoute,
+  AppPenetapanIndexRoute: AppPenetapanIndexRoute,
+  AppSptpdIndexRoute: AppSptpdIndexRoute,
+  AppWajibPajakIndexRoute: AppWajibPajakIndexRoute,
+  AppBphtbIdIndexRoute: AppBphtbIdIndexRoute,
+  AppBphtbCreateIndexRoute: AppBphtbCreateIndexRoute,
+  AppPbbNopIndexRoute: AppPbbNopIndexRoute,
+  AppPbbSpptIndexRoute: AppPbbSpptIndexRoute,
+  AppPembayaranIdIndexRoute: AppPembayaranIdIndexRoute,
+  AppPembayaranCreateIndexRoute: AppPembayaranCreateIndexRoute,
+  AppPembayaranRekonsiliasiIndexRoute: AppPembayaranRekonsiliasiIndexRoute,
+  AppPenagihanStpdIndexRoute: AppPenagihanStpdIndexRoute,
+  AppPenetapanIdIndexRoute: AppPenetapanIdIndexRoute,
+  AppPenetapanCreateIndexRoute: AppPenetapanCreateIndexRoute,
+  AppSptpdIdIndexRoute: AppSptpdIdIndexRoute,
+  AppSptpdCreateIndexRoute: AppSptpdCreateIndexRoute,
+  AppWajibPajakCreateIndexRoute: AppWajibPajakCreateIndexRoute,
+  AppPbbObjekCreateIndexRoute: AppPbbObjekCreateIndexRoute,
+  AppPbbSpptTerbitIndexRoute: AppPbbSpptTerbitIndexRoute,
+  AppPenagihanStpdIdIndexRoute: AppPenagihanStpdIdIndexRoute,
+  AppPenagihanStpdCreateIndexRoute: AppPenagihanStpdCreateIndexRoute,
+}
+
+const AppRouteRouteWithChildren = AppRouteRoute._addFileChildren(
+  AppRouteRouteChildren,
+)
 
 interface AuthRouteRouteChildren {
   AuthForgotPasswordIndexRoute: typeof AuthForgotPasswordIndexRoute
@@ -199,24 +1488,10 @@ const AuthRouteRouteWithChildren = AuthRouteRoute._addFileChildren(
   AuthRouteRouteChildren,
 )
 
-interface AppRouteRouteChildren {
-  AppIndexRoute: typeof AppIndexRoute
-  AppDashboardIndexRoute: typeof AppDashboardIndexRoute
-}
-
-const AppRouteRouteChildren: AppRouteRouteChildren = {
-  AppIndexRoute: AppIndexRoute,
-  AppDashboardIndexRoute: AppDashboardIndexRoute,
-}
-
-const AppRouteRouteWithChildren = AppRouteRoute._addFileChildren(
-  AppRouteRouteChildren,
-)
-
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  AuthRouteRoute: AuthRouteRouteWithChildren,
   AppRouteRoute: AppRouteRouteWithChildren,
+  AuthRouteRoute: AuthRouteRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

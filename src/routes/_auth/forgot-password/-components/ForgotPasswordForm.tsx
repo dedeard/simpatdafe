@@ -1,3 +1,4 @@
+import { FormAlert } from '@/components/form-alert'
 import { Button } from '@/components/ui/button'
 import { Field, FieldGroup, FieldLabel } from '@/components/ui/field'
 import { Input } from '@/components/ui/input'
@@ -5,7 +6,7 @@ import { requestPasswordReset } from '@/lib/api/resources'
 import { cn } from '@/lib/utils'
 import { Loader2Icon } from 'lucide-react'
 import { useActionState } from 'react'
-import { AuthHeader, AuthSwitchLink, FormAlert } from '../../-components'
+import { AuthHeader, AuthSwitchLink } from '../../-components'
 
 type ForgotPasswordState = { sentTo?: string }
 
