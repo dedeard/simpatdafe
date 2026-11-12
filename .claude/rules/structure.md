@@ -14,12 +14,12 @@ src/
 │   ├── __root.tsx          # Root document (html, head, devtools)
 │   ├── index.tsx           # Landing page
 │   │
-│   ├── auth/
-│   │   ├── route.tsx       # Auth layout (centered card)
+│   ├── _auth/              # Pathless layout: `_` prefix adds no URL segment
+│   │   ├── route.tsx       # Auth layout (two-column, shadcn login-02)
 │   │   ├── -components/    # Shared components for ALL auth pages
-│   │   ├── login/
-│   │   ├── register/
-│   │   └── forgot-password/
+│   │   ├── login/          # /login
+│   │   ├── register/       # /register
+│   │   └── forgot-password/ # /forgot-password
 │   │
 │   └── app/
 │       ├── route.tsx       # Authenticated app layout (sidebar + <Outlet />)
