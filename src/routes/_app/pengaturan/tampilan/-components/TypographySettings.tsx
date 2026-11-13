@@ -1,6 +1,7 @@
 import { Separator } from '@/components/ui/separator'
 import {
   FONT_STACKS,
+  THEME_ALIGNS,
   THEME_DENSITIES,
   THEME_FONTS,
   THEME_HEADING_FONTS,
@@ -10,7 +11,14 @@ import {
   THEME_WIDTHS,
   type ThemeSettings,
 } from '@/lib/theme'
-import { ALargeSmallIcon, AlignVerticalSpaceAroundIcon, MoveHorizontalIcon, UnfoldVerticalIcon } from 'lucide-react'
+import {
+  ALargeSmallIcon,
+  AlignCenterVerticalIcon,
+  AlignStartVerticalIcon,
+  AlignVerticalSpaceAroundIcon,
+  MoveHorizontalIcon,
+  UnfoldVerticalIcon,
+} from 'lucide-react'
 import { SettingTile } from './SettingTile'
 
 type TypographySettingsProps = {
@@ -27,13 +35,20 @@ export function TypographySettings({ settings, onChange }: TypographySettingsPro
 
   return (
     <div className="flex flex-col gap-4">
-      <div className="grid gap-3 sm:grid-cols-2">
+      <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
         <SettingTile
           label="Lebar konten"
           value={settings.width}
           options={THEME_WIDTHS}
           onChange={(width) => onChange({ width })}
           icon={<MoveHorizontalIcon />}
+        />
+        <SettingTile
+          label="Posisi konten"
+          value={settings.align}
+          options={THEME_ALIGNS}
+          onChange={(align) => onChange({ align })}
+          icon={settings.align === 'left' ? <AlignStartVerticalIcon /> : <AlignCenterVerticalIcon />}
         />
         <SettingTile
           label="Kerapatan"

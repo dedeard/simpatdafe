@@ -77,7 +77,7 @@ function AppearancePage() {
               options={THEME_RADII.map((r) => ({ ...r, content: <RadiusSample radius={r.value} /> }))}
             />
           </Section>
-          <Section title="Tipografi dan tata letak" description="Lebar halaman, kerapatan, jenis huruf, ukuran dan jarak baris.">
+          <Section title="Tipografi dan tata letak" description="Lebar dan posisi halaman, kerapatan, jenis huruf, ukuran dan jarak baris.">
             <TypographySettings settings={settings} onChange={setTheme} />
           </Section>
         </div>

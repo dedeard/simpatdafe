@@ -29,7 +29,7 @@ function AppLayout() {
             <Separator orientation="vertical" className="mr-2 data-[orientation=vertical]:h-4" />
             <span className="text-sm text-muted-foreground">Kabupaten Raja Ampat · Papua Barat Daya</span>
           </header>
-          <div className="mx-auto w-full max-w-(--content-width)">
+          <div className="mx-(--content-margin) w-full max-w-(--content-width)">
             {needed && !can(needed) ? <AccessDenied permission={needed} /> : <Outlet />}
           </div>
         </SidebarInset>

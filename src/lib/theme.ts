@@ -4,6 +4,7 @@ export type ThemeFont = 'inter' | 'geist' | 'jakarta' | 'serif' | 'system'
 export type ThemeHeadingFont = ThemeFont | 'body'
 export type ThemeMonoFont = 'system-mono' | 'geist-mono' | 'jetbrains'
 export type ThemeWidth = 'narrow' | 'medium' | 'wide' | 'full'
+export type ThemeAlign = 'center' | 'left'
 export type ThemeLeading = 'tight' | 'normal' | 'relaxed'
 export type ThemeDensity = 'compact' | 'normal' | 'comfortable'
 
@@ -12,6 +13,7 @@ export type ThemeSettings = {
   color: ThemeColor
   radius: number
   width: ThemeWidth
+  align: ThemeAlign
   density: ThemeDensity
   fontHeading: ThemeHeadingFont
   fontBody: ThemeFont
@@ -27,6 +29,7 @@ export const DEFAULT_THEME: ThemeSettings = {
   color: 'neutral',
   radius: 0.625,
   width: 'full',
+  align: 'center',
   density: 'normal',
   fontHeading: 'body',
   fontBody: 'inter',
@@ -84,6 +87,11 @@ export const THEME_WIDTHS: Array<Choice<ThemeWidth>> = [
   { value: 'full', label: 'Penuh', hint: 'Selebar layar' },
 ]
 
+export const THEME_ALIGNS: Array<Choice<ThemeAlign>> = [
+  { value: 'center', label: 'Tengah' },
+  { value: 'left', label: 'Rata kiri' },
+]
+
 export const THEME_DENSITIES: Array<Choice<ThemeDensity>> = [
   { value: 'compact', label: 'Rapat', hint: '0,9×' },
   { value: 'normal', label: 'Normal', hint: '1×' },
@@ -119,6 +127,7 @@ export const FONT_STACKS: Record<ThemeFont | ThemeMonoFont, string> = {
 export const THEME_TOKENS = {
   fonts: FONT_STACKS,
   widths: { narrow: '64rem', medium: '80rem', wide: '96rem', full: 'none' } as Record<ThemeWidth, string>,
+  margins: { center: '', left: '0' } as Record<ThemeAlign, string>,
   spacing: { compact: '0.225rem', normal: '', comfortable: '0.275rem' } as Record<ThemeDensity, string>,
   leading: {
     tight: { base: '1.35', xs: '1.25', sm: '1.3', lg: '1.35' },
@@ -140,6 +149,7 @@ export function sanitizeTheme(raw: unknown): ThemeSettings {
     color: pick(THEME_COLORS, input.color, DEFAULT_THEME.color),
     radius: pick(THEME_RADII, input.radius, DEFAULT_THEME.radius),
     width: pick(THEME_WIDTHS, input.width, DEFAULT_THEME.width),
+    align: pick(THEME_ALIGNS, input.align, DEFAULT_THEME.align),
     density: pick(THEME_DENSITIES, input.density, DEFAULT_THEME.density),
     fontHeading: pick(THEME_HEADING_FONTS, input.fontHeading, DEFAULT_THEME.fontHeading),
     fontBody: pick(THEME_FONTS, input.fontBody, DEFAULT_THEME.fontBody),
@@ -164,6 +174,7 @@ export function applyTheme(settings: ThemeSettings, tokens: ThemeTokens) {
   set('--radius', `${settings.radius}rem`)
   set('--spacing', tokens.spacing[settings.density])
   set('--content-width', tokens.widths[settings.width])
+  set('--content-margin', tokens.margins[settings.align])
   set('--app-font-sans', tokens.fonts[settings.fontBody])
   set('--app-font-heading', settings.fontHeading === 'body' ? '' : tokens.fonts[settings.fontHeading])
   set('--app-font-mono', tokens.fonts[settings.fontMono])

@@ -59,6 +59,7 @@
   --app-font-heading: var(--app-font-sans);
   --app-font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
   --content-width: none;
+  --content-margin: auto;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
